@@ -1,0 +1,4 @@
+int main(){
+print("你好");
+return 0
+}
