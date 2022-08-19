@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta class="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/me.css">
+    <title>关于我</title>
+</head>
+<body>
+<!--这是一个导航页面-->
+<nav class="ui inverted attached segment m-padded-tb-mini" >
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu">
+            <h2 class="ui red header item">竹書园</h2>
+            <a href="#" class="m-item item m-mobile-hide"><i class="mini home icon"></i>首页</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="mini idea icon"></i>分类</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="mini tags icon"></i>标签</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="mini clone icon"></i>归档</a>
+            <a href="#" class="active m-item item m-mobile-hide"><i class="mini info icon"></i>了解我</a>
+            <div class="right m-item right item m-mobile-hide">
+                <div class="ui icon input">
+                    <input type="text" placeholder="搜索... " >
+                    <i class="search link icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+   <!--中间内容-->
+<div class="m-container-small m-padded-tb-big">
+    <div class="ui container">
+        <div class="ui stackable grid">
+            <div class="eleven wide column">
+                <div class="ui teal segment">
+                    <img src="../static/images/me.jpg" alt="" class="ui rounded image" style="width: 420px;"/>
+                </div>
+            </div>
+            <div class="five wide column">
+                <div class="ui top teal attached segment">
+                    <div class="ui center aligned header">关于我</div>
+                </div>
+                <div class="ui attached segment">
+                    <p class="m-text">一个书法的爱好者</p>
+                    <p class="m-text">一个书法的爱好者</p>
+                </div>
+                <div class="ui attached segment">
+                    <div class="ui orange left pointing basic label m-margin-bottom-small">颜真卿</div>
+                    <div class="ui orange left pointing basic label m-margin-bottom-small">颜真卿</div>
+                    <div class="ui orange left pointing basic label m-margin-bottom-small">颜真卿</div>
+                    <div class="ui orange left pointing basic label m-margin-bottom-small">颜真卿</div>
+                </div>
+                <div class="ui attached segment">
+                    <div class="ui teal left pointing basic label m-margin-bottom-small">java</div>
+                    <div class="ui teal left pointing basic label m-margin-bottom-small">python</div>
+                    <div class="ui teal left pointing basic label m-margin-bottom-small">springboot</div>
+                    <div class="ui teal left pointing basic label m-margin-bottom-small">spring</div>
+                    <div class="ui teal left pointing basic label m-margin-bottom-small">mysql</div>
+                    <div class="ui teal left pointing basic label m-margin-bottom-small">springmvc</div>
+                    <div class="ui teal left pointing basic label m-margin-bottom-small">mybatis</div>
+                    <div class="ui teal left pointing basic label m-margin-bottom-small">shiro</div>
+                </div>
+                <div class="ui button attached segment">
+                    <a href="#" class="ui circular icon button m-margin-left-small"><i class="github icon"></i></a>
+                    <a href="#" class="ui wechat circular icon button m-margin-left-small"><i class="wexin icon"></i></a>
+                    <a href="#" class="ui qq circular icon button m-margin-left-small" data-content="939170078" data-position="bottom center"><i class="qq icon"></i></a>
+                </div>
+                <div class="ui wechatQR flowing popup transition hidden">
+                    <img src="../static/images/wechat.jpg" class="ui rounded image" style="width: 100px" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<!--尾部内容-->
+<footer class="ui inverted vertical segment m-padded-tb-massive">
+    <div class="ui center aligned container">
+        <div class="ui inverted divided stackable grid">
+            <div class="three wide column">
+                <img src="../static/images/wechat.jpg" class="ui rounded image " alt="" style="width: 110px">
+            </div>
+            <div class="three wide column">
+                <h3 class="ui inverted blue header m-opacity-mini">书法爱好者</h3>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">独爱颜真卿</a>
+                    <a href="#" class="item">欣赏赵孟頫</a>
+                    <a href="#" class="item">崇拜王羲之</a>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h3 class="ui inverted blue header m-opacity-mini">联系我</h3>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">Email: 1956392405@.com</a>
+                    <a href="#" class="item">QQ: 1956392405</a>
+                </div>
+            </div>
+            <div class="seven wide column">
+                <h3 class="ui inverted header blue m-opacity-mini">我的博客</h3>
+                <div class="ui inverted link list">
+                    <a href="#" class="item m-opacity-mini">分享我第一写的网页</a>
+                    <a href="#" class="item m-opacity-mini">第一次写的项目</a>
+                    <a href="#" class="item m-opacity-mini">谢谢观看</a>
+                </div>
+            </div>
+        </div>
+        <div class="ui inverted section divider"></div>
+        <p class="m-text-thin m-text-spaced m-opacity-mini">written in 2022</p>
+    </div>
+</footer>
+<!--/*/<th:block th:replace="_fragments :: script">/*/-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+
+<!--/*/</th:block>/*/-->
+<script>
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+    $('#payButton').popup({
+        popup : $('.payQR.popup'),
+        on : 'click',
+        position: 'button center'
+    });
+
+</script>
+</body>
+</html>
