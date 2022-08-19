@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yeqifu.bus.mapper.CheckMapper">
-  <resultMap id="BaseResultMap" type="com.yeqifu.bus.domain.Check">
+<mapper namespace="com.ldm.bus.mapper.CheckMapper">
+  <resultMap id="BaseResultMap" type="com.ldm.bus.domain.Check">
     <id column="checkid" jdbcType="VARCHAR" property="checkid" />
     <result column="checkdate" jdbcType="TIMESTAMP" property="checkdate" />
     <result column="checkdesc" jdbcType="VARCHAR" property="checkdesc" />
@@ -24,7 +24,7 @@
     delete from bus_check
     where checkid = #{checkid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.yeqifu.bus.domain.Check">
+  <insert id="insert" parameterType="com.ldm.bus.domain.Check">
     insert into bus_check (checkid, checkdate, checkdesc, 
       problem, paymoney, opername, 
       rentid, createtime)
@@ -32,7 +32,7 @@
       #{problem,jdbcType=VARCHAR}, #{paymoney,jdbcType=DOUBLE}, #{opername,jdbcType=VARCHAR}, 
       #{rentid,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.yeqifu.bus.domain.Check">
+  <insert id="insertSelective" parameterType="com.ldm.bus.domain.Check">
     insert into bus_check
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="checkid != null">
@@ -87,7 +87,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.yeqifu.bus.domain.Check">
+  <update id="updateByPrimaryKeySelective" parameterType="com.ldm.bus.domain.Check">
     update bus_check
     <set>
       <if test="checkdate != null">
@@ -114,7 +114,7 @@
     </set>
     where checkid = #{checkid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.yeqifu.bus.domain.Check">
+  <update id="updateByPrimaryKey" parameterType="com.ldm.bus.domain.Check">
     update bus_check
     set checkdate = #{checkdate,jdbcType=TIMESTAMP},
       checkdesc = #{checkdesc,jdbcType=VARCHAR},

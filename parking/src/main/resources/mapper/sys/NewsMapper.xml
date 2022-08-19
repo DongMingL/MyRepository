@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yeqifu.sys.mapper.NewsMapper">
-  <resultMap id="BaseResultMap" type="com.yeqifu.sys.domain.News">
+<mapper namespace="com.ldm.sys.mapper.NewsMapper">
+  <resultMap id="BaseResultMap" type="com.ldm.sys.domain.News">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="title" jdbcType="VARCHAR" property="title" />
     <result column="content" jdbcType="VARCHAR" property="content" />
@@ -21,13 +21,13 @@
     delete from sys_news
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.yeqifu.sys.domain.News">
+  <insert id="insert" parameterType="com.ldm.sys.domain.News">
     insert into sys_news (id, title, content, 
       createtime, opername)
     values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
       #{createtime,jdbcType=TIMESTAMP}, #{opername,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.yeqifu.sys.domain.News">
+  <insert id="insertSelective" parameterType="com.ldm.sys.domain.News">
     insert into sys_news
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -64,7 +64,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.yeqifu.sys.domain.News">
+  <update id="updateByPrimaryKeySelective" parameterType="com.ldm.sys.domain.News">
     update sys_news
     <set>
       <if test="title != null">
@@ -82,7 +82,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.yeqifu.sys.domain.News">
+  <update id="updateByPrimaryKey" parameterType="com.ldm.sys.domain.News">
     update sys_news
     set title = #{title,jdbcType=VARCHAR},
       content = #{content,jdbcType=VARCHAR},

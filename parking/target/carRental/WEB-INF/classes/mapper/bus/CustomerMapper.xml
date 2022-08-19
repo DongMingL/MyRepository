@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yeqifu.bus.mapper.CustomerMapper">
-  <resultMap id="BaseResultMap" type="com.yeqifu.bus.domain.Customer">
+<mapper namespace="com.ldm.bus.mapper.CustomerMapper">
+  <resultMap id="BaseResultMap" type="com.ldm.bus.domain.Customer">
     <id column="identity" jdbcType="VARCHAR" property="identity" />
     <result column="custname" jdbcType="VARCHAR" property="custname" />
     <result column="sex" jdbcType="INTEGER" property="sex" />
@@ -23,7 +23,7 @@
     delete from bus_customer
     where identity = #{identity,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.yeqifu.bus.domain.Customer">
+  <insert id="insert" parameterType="com.ldm.bus.domain.Customer">
     insert into bus_customer (identity, custname, sex, 
       address, phone, career, 
       createtime)
@@ -31,7 +31,7 @@
       #{address,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{career,jdbcType=VARCHAR}, 
       #{createtime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.yeqifu.bus.domain.Customer">
+  <insert id="insertSelective" parameterType="com.ldm.bus.domain.Customer">
     insert into bus_customer
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="identity != null">
@@ -80,7 +80,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.yeqifu.bus.domain.Customer">
+  <update id="updateByPrimaryKeySelective" parameterType="com.ldm.bus.domain.Customer">
     update bus_customer
     <set>
       <if test="custname != null">
@@ -104,7 +104,7 @@
     </set>
     where identity = #{identity,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.yeqifu.bus.domain.Customer">
+  <update id="updateByPrimaryKey" parameterType="com.ldm.bus.domain.Customer">
     update bus_customer
     set custname = #{custname,jdbcType=VARCHAR},
       sex = #{sex,jdbcType=INTEGER},

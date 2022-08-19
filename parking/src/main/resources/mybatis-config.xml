@@ -8,7 +8,7 @@
     </settings>
 
     <typeAliases>
-        <package name="com.yeqifu.domain"/>
+        <package name="com.ldm.domain"/>
     </typeAliases>
     <plugins>
         <plugin interceptor="com.github.pagehelper.PageInterceptor">

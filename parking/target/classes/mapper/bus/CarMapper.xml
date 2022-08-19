@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yeqifu.bus.mapper.CarMapper">
-  <resultMap id="BaseResultMap" type="com.yeqifu.bus.domain.Car">
+<mapper namespace="com.ldm.bus.mapper.CarMapper">
+  <resultMap id="BaseResultMap" type="com.ldm.bus.domain.Car">
     <id column="carnumber" jdbcType="VARCHAR" property="carnumber" />
     <result column="cartype" jdbcType="VARCHAR" property="cartype" />
     <result column="color" jdbcType="VARCHAR" property="color" />
@@ -33,7 +33,7 @@
     delete from bus_car
     where carnumber = #{carnumber,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.yeqifu.bus.domain.Car">
+  <insert id="insert" parameterType="com.ldm.bus.domain.Car">
     insert into bus_car (carnumber, cartype, color,
     price, rentprice, deposit,
     isrenting, description, carimg,
@@ -46,7 +46,7 @@
     #{createtime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective"
-          parameterType="com.yeqifu.bus.domain.Car">
+          parameterType="com.ldm.bus.domain.Car">
     insert into bus_car
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="carnumber != null">
@@ -114,7 +114,7 @@
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective"
-          parameterType="com.yeqifu.bus.domain.Car">
+          parameterType="com.ldm.bus.domain.Car">
     update bus_car
     <set>
       <if test="cartype != null">
@@ -148,7 +148,7 @@
     where carnumber = #{carnumber,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey"
-          parameterType="com.yeqifu.bus.domain.Car">
+          parameterType="com.ldm.bus.domain.Car">
     update bus_car
     set cartype = #{cartype,jdbcType=VARCHAR},
     color = #{color,jdbcType=VARCHAR},

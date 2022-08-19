@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yeqifu.bus.mapper.RentMapper">
-  <resultMap id="BaseResultMap" type="com.yeqifu.bus.domain.Rent">
+<mapper namespace="com.ldm.bus.mapper.RentMapper">
+  <resultMap id="BaseResultMap" type="com.ldm.bus.domain.Rent">
     <id column="rentid" jdbcType="VARCHAR" property="rentid" />
     <result column="price" jdbcType="DOUBLE" property="price" />
     <result column="begindate" jdbcType="TIMESTAMP" property="begindate" />
@@ -25,7 +25,7 @@
     delete from bus_rent
     where rentid = #{rentid,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.yeqifu.bus.domain.Rent">
+  <insert id="insert" parameterType="com.ldm.bus.domain.Rent">
     insert into bus_rent (rentid, price, begindate, 
       returndate, rentflag, identity, 
       carnumber, opername, createtime
@@ -35,7 +35,7 @@
       #{carnumber,jdbcType=VARCHAR}, #{opername,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.yeqifu.bus.domain.Rent">
+  <insert id="insertSelective" parameterType="com.ldm.bus.domain.Rent">
     insert into bus_rent
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="rentid != null">
@@ -96,7 +96,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.yeqifu.bus.domain.Rent">
+  <update id="updateByPrimaryKeySelective" parameterType="com.ldm.bus.domain.Rent">
     update bus_rent
     <set>
       <if test="price != null">
@@ -126,7 +126,7 @@
     </set>
     where rentid = #{rentid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.yeqifu.bus.domain.Rent">
+  <update id="updateByPrimaryKey" parameterType="com.ldm.bus.domain.Rent">
     update bus_rent
     set price = #{price,jdbcType=DOUBLE},
       begindate = #{begindate,jdbcType=TIMESTAMP},

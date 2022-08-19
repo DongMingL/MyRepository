@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yeqifu.stat.mapper.StatMapper">
+<mapper namespace="com.ldm.stat.mapper.StatMapper">
 
     <!--查询客户地区-->
-    <select id="queryCustomerAreaStat" resultType="com.yeqifu.stat.domain.BaseEntity">
+    <select id="queryCustomerAreaStat" resultType="com.ldm.stat.domain.BaseEntity">
       select address as name,count(1) as value from bus_customer GROUP BY address
     </select>
 
 	<!--查询客户地区性别-->
-	<select id="queryCustomerAreaSexStat" resultType="com.yeqifu.stat.domain.BaseEntity">
+	<select id="queryCustomerAreaSexStat" resultType="com.ldm.stat.domain.BaseEntity">
 		select sex as name,count(1) as value from bus_customer where address=#{value} group by sex
 	</select>
 
     <!--查询业务员年度业绩-->
-    <select id="queryOpernameYearGradeStat" resultType="com.yeqifu.stat.domain.BaseEntity">
+    <select id="queryOpernameYearGradeStat" resultType="com.ldm.stat.domain.BaseEntity">
       select opername as name,sum(price) as value from bus_rent where DATE_FORMAT(createtime,"%Y")=#{value} GROUP BY opername
     </select>
 

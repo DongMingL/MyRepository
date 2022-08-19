@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yeqifu.sys.mapper.MenuMapper">
-  <resultMap id="BaseResultMap" type="com.yeqifu.sys.domain.Menu">
+<mapper namespace="com.ldm.sys.mapper.MenuMapper">
+  <resultMap id="BaseResultMap" type="com.ldm.sys.domain.Menu">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="pid" jdbcType="INTEGER" property="pid" />
     <result column="title" jdbcType="VARCHAR" property="title" />
@@ -24,7 +24,7 @@
     delete from sys_menu
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.yeqifu.sys.domain.Menu">
+  <insert id="insert" parameterType="com.ldm.sys.domain.Menu">
     insert into sys_menu (id, pid, title, 
       href, spread, target, 
       icon, available)
@@ -32,7 +32,7 @@
       #{href,jdbcType=VARCHAR}, #{spread,jdbcType=INTEGER}, #{target,jdbcType=VARCHAR}, 
       #{icon,jdbcType=VARCHAR}, #{available,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.yeqifu.sys.domain.Menu">
+  <insert id="insertSelective" parameterType="com.ldm.sys.domain.Menu">
     insert into sys_menu
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -87,7 +87,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.yeqifu.sys.domain.Menu">
+  <update id="updateByPrimaryKeySelective" parameterType="com.ldm.sys.domain.Menu">
     update sys_menu
     <set>
       <if test="pid != null">
@@ -114,7 +114,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.yeqifu.sys.domain.Menu">
+  <update id="updateByPrimaryKey" parameterType="com.ldm.sys.domain.Menu">
     update sys_menu
     set pid = #{pid,jdbcType=INTEGER},
       title = #{title,jdbcType=VARCHAR},
